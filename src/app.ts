@@ -54,6 +54,6 @@ app.disable('x-powered-by');
 
 // Routes
 app.use('/api/v1/posts', api_v1.postRoutes);
-// app.use('/api/v1/blogs', api_v1.adminUserRols);
+app.use('/api/v1/users', api_v1.userRoutes);
 
 export default app;

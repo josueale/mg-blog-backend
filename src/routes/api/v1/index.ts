@@ -1,2 +1,3 @@
-export { default as postRoutes } from './blog';
+export { default as postRoutes } from './posts';
+export { default as userRoutes } from './users';
 
