@@ -1,6 +1,10 @@
 import { Router } from 'express';
 
-import { createUserController, getAllUsersController } from '@Controllers/users/v1';
+import {
+  createUserController,
+  getAllUsersController,
+  updateUserController,
+} from '@Controllers/users/v1';
 
 const router = Router();
 
@@ -8,7 +12,7 @@ router.get('/', getAllUsersController);
 
 router.post('/', createUserController);
 
-router.put('/');
+router.put('/', updateUserController);
 
 router.delete('/:id');
 
