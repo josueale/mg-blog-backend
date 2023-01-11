@@ -1,10 +1,10 @@
 import { Router } from 'express';
 
-// import { getAllPostsControllers } from '@Controllers/blog/v1';
+import { getAllUsersControllers } from '@Controllers/users/v1';
 
 const router = Router();
 
-router.get('/', );
+router.get('/', getAllUsersControllers);
 
 router.post('/');
 
