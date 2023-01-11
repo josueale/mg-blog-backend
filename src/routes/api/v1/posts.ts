@@ -4,7 +4,8 @@ import {
   createPostController,
   deletePostController,
   getAllPostsControllers,
-  updatePostController,
+  getPostByIdController,
+  updatePostController
 } from '@Controllers/posts/v1';
 
 const router = Router();
@@ -15,6 +16,7 @@ router.post('/', createPostController);
 
 router.put('/', updatePostController);
 
+router.get('/:id', getPostByIdController);
 router.delete('/:id', deletePostController);
 
 export default router;
