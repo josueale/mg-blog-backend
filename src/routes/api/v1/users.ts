@@ -2,6 +2,7 @@ import { Router } from 'express';
 
 import {
   createUserController,
+  deleteUserController,
   getAllUsersController,
   updateUserController,
 } from '@Controllers/users/v1';
@@ -14,6 +15,6 @@ router.post('/', createUserController);
 
 router.put('/', updateUserController);
 
-router.delete('/:id');
+router.delete('/:id', deleteUserController);
 
 export default router;

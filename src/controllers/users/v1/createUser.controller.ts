@@ -19,18 +19,18 @@ export async function createUserController(req: Request, res: Response) {
       return;
     }
 
-    const usa = new Users({
+    const newUser = new Users({
       name: name?.trim() ?? '',
       lastname: lastname?.trim() ?? '',
       email: email?.trim() ?? '',
       password: password,
     });
 
-    const passwordHashed = await asyncHashString(usa.password);
+    const passwordHashed = await asyncHashString(newUser.password);
 
-    usa.password = passwordHashed!;
+    newUser.password = passwordHashed!;
 
-    const userSaved = await usa.save();
+    const userSaved = await newUser.save();
 
     res.status(201).json({
       status: 'success',
