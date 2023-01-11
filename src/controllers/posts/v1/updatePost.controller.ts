@@ -7,6 +7,8 @@ export async function updatePostController(req: Request, res: Response) {
   try {
     const { post_id, title, content } = req.body;
 
+    // add... middleware?
+
     if (!isValidObjectId(post_id)) {
       res.status(400).json({
         status: 'error',
@@ -29,11 +31,10 @@ export async function updatePostController(req: Request, res: Response) {
       return;
     }
 
-    post.title = title?.trim() ?? ''
-    post.content = content?.trim() ?? ''
+    post.title = title?.trim() ?? '';
+    post.content = content?.trim() ?? '';
 
-
-    const postUpdated = await post.save()
+    const postUpdated = await post.save();
 
     res.json({
       status: 'succes',
@@ -41,7 +42,6 @@ export async function updatePostController(req: Request, res: Response) {
       message: 'Post updated successfully',
       value: postUpdated,
     });
-
   } catch (error) {
     console.log(error);
     res.status(400).json(error);
