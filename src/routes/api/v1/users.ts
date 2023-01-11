@@ -1,12 +1,12 @@
 import { Router } from 'express';
 
-import { getAllUsersControllers } from '@Controllers/users/v1';
+import { createUserController, getAllUsersController } from '@Controllers/users/v1';
 
 const router = Router();
 
-router.get('/', getAllUsersControllers);
+router.get('/', getAllUsersController);
 
-router.post('/');
+router.post('/', createUserController);
 
 router.put('/');
 
