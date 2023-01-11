@@ -1,6 +1,8 @@
 import { Schema, model } from 'mongoose';
 
-const PostSchema = new Schema(
+import Post from '@Types/post';
+
+const PostSchema = new Schema<Post>(
   {
     title: String,
     content: String,
