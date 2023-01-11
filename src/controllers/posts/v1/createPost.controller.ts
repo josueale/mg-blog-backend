@@ -37,7 +37,7 @@ export async function createPostController(req: Request, res: Response) {
   res.status(201).json({
     status: 'success',
     type: 'post-saved',
-    message: 'Post saved successfuly',
+    message: 'Post saved successfully',
     value: postSaved,
   });
 
