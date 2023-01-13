@@ -20,9 +20,9 @@ export async function deletePostController(req: Request, res: Response) {
     const postD = await Posts.deleteOne({ _id: new ObjectId(id) });
 
     if (!postD.deletedCount) {
-      res.status(400).json({
+      res.status(404).json({
         status: 'error',
-        type: 'deleting-error',
+        type: 'not-found',
         message: 'Error while deleting Post',
         value: null,
       });
